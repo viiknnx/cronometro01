@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cronômetro Avançado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <div class="stopwatch-card">
+            <span id="display">00:00:00</span>
+            <div class="controls">
+                <button id="start-pause-btn">Iniciar</button>
+                <button id="stop-btn">Finalizar</button>
+            </div>
+        </div>
+        
+        <div class="title-input-area">
+            <p id="add-title-prompt">Add</p>
+            <div id="input-container" style="display: none;">
+                <input type="text" id="title-input" placeholder="Título da contagem">
+                <button id="enter-title-btn">Enter</button>
+            </div>
+        </div>
+
+        <div class="history">
+            <h3>Histórico de Contagens</h3>
+            <ul id="history-list">
+                </ul>
+        </div>
+
+        <button id="mode-toggle">Alternar Modo</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
