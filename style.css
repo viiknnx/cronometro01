@@ -1,0 +1,38 @@
+/* Centralização */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s;
+    margin: 0;
+}
+
+/* Fundo Transparente, Sem Sombra e Bordas Arredondadas */
+.stopwatch-card {
+    padding: 20px;
+    border-radius: 15px; /* Bordas Arredondadas */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo Transparente (ajuste o valor alfa) */
+    backdrop-filter: blur(5px); /* Efeito de vidro (opcional, mas legal) */
+    box-shadow: none; /* Sem sombras */
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+}
+
+/* Modos Claro/Escuro (CSS com Variáveis) */
+:root {
+    --bg-color-light: #f0f0f0;
+    --text-color-light: #333;
+    --bg-color-dark: #1e1e1e;
+    --text-color-dark: #eee;
+}
+
+.light-mode {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
