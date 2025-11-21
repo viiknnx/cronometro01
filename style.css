@@ -1,38 +1,126 @@
-/* Centralização */
+/* Variáveis para temas */
+:root {
+    --bg-color: rgba(255, 255, 255, 0.7); /* Fundo claro semi-transparente */
+    --text-color: #333;
+    --border-color: #ccc;
+    --control-bg: #eee;
+}
+
+/* Modo escuro */
+.dark-mode {
+    --bg-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    --text-color: #fff;
+    --border-color: #444;
+    --control-bg: #555;
+}
+
 body {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.5s;
+    min-height: 100vh;
     margin: 0;
+    /* Remove fundo branco do body para ver o que está por baixo */
+    background: none; 
 }
 
-/* Fundo Transparente, Sem Sombra e Bordas Arredondadas */
-.stopwatch-card {
-    padding: 20px;
-    border-radius: 15px; /* Bordas Arredondadas */
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo Transparente (ajuste o valor alfa) */
-    backdrop-filter: blur(5px); /* Efeito de vidro (opcional, mas legal) */
-    box-shadow: none; /* Sem sombras */
+.container {
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    padding: 20px;
 }
 
-/* Modos Claro/Escuro (CSS com Variáveis) */
-:root {
-    --bg-color-light: #f0f0f0;
-    --text-color-light: #333;
-    --bg-color-dark: #1e1e1e;
-    --text-color-dark: #eee;
+.stopwatch-box {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px; /* Bordas arredondadas */
+    padding: 30px;
+    box-shadow: none; /* Sem sombras */
+    backdrop-filter: blur(5px); /* Efeito de vidro para fundo transparente */
+    -webkit-backdrop-filter: blur(5px);
+    color: var(--text-color);
 }
 
-.light-mode {
-    background-color: var(--bg-color-light);
-    color: var(--text-color-light);
+.display {
+    font-size: 3em;
+    font-family: 'monospace';
+    margin-bottom: 20px;
 }
 
-.dark-mode {
-    background-color: var(--bg-color-dark);
-    color: var(--text-color-dark);
+.controls button {
+    background-color: var(--control-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    filter: brightness(1.2);
+}
+
+.title-input {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-field {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    margin: 0 5px;
+    background-color: var(--control-bg);
+    color: var(--text-color);
+}
+
+#add-title-btn, #enter-title-btn {
+    background-color: var(--control-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Estilo para a lista de histórico */
+.history {
+    margin-top: 30px;
+    color: var(--text-color);
+}
+
+.history h3 {
+    margin-bottom: 10px;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history li {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
 }
